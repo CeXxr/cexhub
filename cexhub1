@@ -71,13 +71,13 @@ Bb.Size = UDim2.new(0, 171, 0, 50)
 Bb.Text = "RJ"
 Bb.TextScaled = true
 
-local Ba = Instance.new("TextBox")
-Ba.Parent = Fr
-Ba.BackgroundColor3 = Color3.fromRGB(195, 195, 195)
-Ba.Position = UDim2.new(0.528, 0, 0.494, 0)
-Ba.Size = UDim2.new(0, 165, 0, 140)
-Ba.Text = "CEX HUB"
-Ba.TextScaled = true
+local Bc = Instance.new("TextButton")
+Bc.Parent = Fr
+Bc.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
+Bc.Position = UDim2.new(0.228, 0, 0.494, 0)
+Bc.Size = UDim2.new(0, 25, 0, 25)
+Bc.Text = "RATW"
+Bc.TextScaled = true
 
 Bo.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
@@ -158,4 +158,8 @@ Bb.MouseButton1Click:Connect(function()
 	else
 		TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
 	end
+end)
+
+Bc.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/cexnpcs/ratw-typa-script/main/cexnpc'))()
 end)
