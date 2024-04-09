@@ -74,8 +74,8 @@ Bb.TextScaled = true
 local Bc = Instance.new("TextButton")
 Bc.Parent = Fr
 Bc.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
-Bc.Position = UDim2.new(0.228, 0, 0.494, 0)
-Bc.Size = UDim2.new(0, 25, 0, 25)
+Bc.Position = UDim2.new(0.528, 0, 0.494, 0)
+Bc.Size = UDim2.new(0, 171, 0, 50)
 Bc.Text = "RATW"
 Bc.TextScaled = true
 
