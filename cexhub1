@@ -1,0 +1,161 @@
+-- VARIABLES + PROPRIETIES
+
+local Sc = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+Sc.Name = "CexsGUI"
+
+local Fr = Instance.new("Frame", Sc)
+Fr.Size = UDim2.new(0, 371, 0, 308)
+Fr.Position = UDim2.new(0.03, 0, 0.03, 0)
+Fr.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+
+local Bo = Instance.new("TextButton")
+Bo.Parent = Fr
+Bo.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
+Bo.Position = UDim2.new(0.028, 0, 0.036, 0)
+Bo.Size = UDim2.new(0, 171, 0, 50)
+Bo.Text = "DEX"
+Bo.TextScaled = true
+
+local Btw = Instance.new("TextButton")
+Btw.Parent = Fr
+Btw.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
+Btw.Position = UDim2.new(0.028, 0, 0.265, 0)
+Btw.Size = UDim2.new(0, 171, 0, 50)
+Btw.Text = "RSPY"
+Btw.TextScaled = true
+
+local Bth = Instance.new("TextButton")
+Bth.Parent = Fr
+Bth.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
+Bth.Position = UDim2.new(0.028, 0, 0.494, 0)
+Bth.Size = UDim2.new(0, 171, 0, 50)
+Bth.Text = "ANTILAG"
+Bth.TextScaled = true
+
+local Bf = Instance.new("TextButton")
+Bf.Parent = Fr
+Bf.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Bf.Position = UDim2.new(0.028, 0, 0.723, 0)
+Bf.Size = UDim2.new(0, 171, 0, 50)
+Bf.Text = "EXIT"
+Bf.TextScaled = true
+
+local Bfv = Instance.new("TextButton")
+Bfv.Parent = Fr
+Bfv.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Bfv.Position = UDim2.new(0.528, 0, 0.036, 0)
+Bfv.Size = UDim2.new(0, 171, 0, 50)
+Bfv.Text = "-"
+Bfv.TextScaled = true
+
+local Fm = Instance.new("Frame", Sc)
+Fm.Size = UDim2.new(0, 371, 0, 308)
+Fm.Position = UDim2.new(0.03, 0, 0.01, 0)
+Fm.BackgroundTransparency = 1
+
+local Bn = Instance.new("TextButton")
+Bn.Parent = Fm
+Bn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Bn.Position = UDim2.new(0.228, 0, -0.12, 0)
+Bn.Size = UDim2.new(0, 25, 0, 25)
+Bn.Text = "+"
+Bn.TextScaled = true
+Bn.Active = false
+Bn.Visible = false
+
+local Bb = Instance.new("TextButton")
+Bb.Parent = Fr
+Bb.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
+Bb.Position = UDim2.new(0.528, 0, 0.265, 0)
+Bb.Size = UDim2.new(0, 171, 0, 50)
+Bb.Text = "RJ"
+Bb.TextScaled = true
+
+local Ba = Instance.new("TextBox")
+Ba.Parent = Fr
+Ba.BackgroundColor3 = Color3.fromRGB(195, 195, 195)
+Ba.Position = UDim2.new(0.528, 0, 0.494, 0)
+Ba.Size = UDim2.new(0, 165, 0, 140)
+Ba.Text = "CEX HUB"
+Ba.TextScaled = true
+
+Bo.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+end)
+
+Btw.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+end)
+
+Bth.MouseButton1Click:Connect(function()
+    local Terrain = workspace:FindFirstChildOfClass('Terrain')
+	Terrain.WaterWaveSize = 0
+	Terrain.WaterWaveSpeed = 0
+	Terrain.WaterReflectance = 0
+	Terrain.WaterTransparency = 0
+	Lighting.GlobalShadows = false
+	Lighting.FogEnd = 9e9
+	settings().Rendering.QualityLevel = 1
+	for i,v in pairs(game:GetDescendants()) do
+		if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+			v.Material = "Plastic"
+			v.Reflectance = 0
+		elseif v:IsA("Decal") then
+			v.Transparency = 1
+		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+			v.Lifetime = NumberRange.new(0)
+		elseif v:IsA("Explosion") then
+			v.BlastPressure = 1
+			v.BlastRadius = 1
+		end
+	end
+	for i,v in pairs(Lighting:GetDescendants()) do
+		if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("DepthOfFieldEffect") then
+			v.Enabled = false
+		end
+	end
+	workspace.DescendantAdded:Connect(function(child)
+		task.spawn(function()
+			if child:IsA('ForceField') then
+				RunService.Heartbeat:Wait()
+				child:Destroy()
+			elseif child:IsA('Sparkles') then
+				RunService.Heartbeat:Wait()
+				child:Destroy()
+			elseif child:IsA('Smoke') or child:IsA('Fire') then
+				RunService.Heartbeat:Wait()
+				child:Destroy()
+			end
+		end)
+	end)
+end)
+
+Bf.MouseButton1Click:Connect(function()
+    Sc:Destroy()
+end)
+
+Bfv.MouseButton1Click:Connect(function()
+    Fr.Active = false
+    Fr.Visible = false
+    Bn.Visible = true
+    Bn.Active = true
+end)
+
+Bn.MouseButton1Click:Connect(function()
+    Fr.Active = true
+    Fr.Visible = true
+    Bn.Visible = false
+    Bn.Active = false
+end)
+
+local Players = game:GetService("Players")
+
+Bb.MouseButton1Click:Connect(function()
+    if #Players:GetPlayers() <= 1 then
+		Players.LocalPlayer:Kick("\nRejoining...")
+		wait()
+		TeleportService:Teleport(PlaceId, Players.LocalPlayer)
+	else
+		TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
+	end
+end)
