@@ -79,6 +79,16 @@ Bc.Size = UDim2.new(0, 171, 0, 50)
 Bc.Text = "RATW"
 Bc.TextScaled = true
 
+local Bh = Instance.new("TextButton")
+Bh.Parent = Fr
+Bh.BackgroundColor3 = Color3.fromRGB(155, 155, 155)
+Bh.Position = UDim2.new(0.528, 0, 0.723, 0)
+Bh.Size = UDim2.new(0, 171, 0, 50)
+Bh.Text = "INFYIELD"
+Bh.TextScaled = true
+
+-- SCRIPTS
+
 Bo.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
 end)
@@ -162,4 +172,8 @@ end)
 
 Bc.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/testcexnpc/ratw/main/ratw%20script%20but%20better'))()
+end)
+
+Bc.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
