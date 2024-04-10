@@ -161,5 +161,5 @@ Bb.MouseButton1Click:Connect(function()
 end)
 
 Bc.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/cexnpcs/ratw-typa-script/main/cexnpc'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/testcexnpc/ratw/main/ratw%20script%20but%20better'))()
 end)
